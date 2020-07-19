@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./piano.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container mx-auto p-4">
+        
+        <h2>MIDI inputs piano</h2>
+        <p>
+            Read MIDI notes messages and highlight the corresponding piano key down here.<br>
+            You may need to allow Chrome to access your MIDI devices, or manually set it to "Allow".
+        </p>
+        <br>
+        
+        <div id="piano"></div>    
+    
+    </div>
+
+    <script src="./piano.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

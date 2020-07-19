@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./script.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container mx-auto p-4">
+
+        <h2>MIDI inputs log</h2>
+        <p>
+            Read and log MIDI messages. Press some keys on your MIDI device to emit some messages.<br>
+            You may need to allow Chrome to access your MIDI devices, or manually set it to "Allow".
+        </p>
+        <br>
+
+        <b>Event log:</b>
+    
+        <!-- Here JavaScript will output MIDI messages -->
+        <ul id='midi-event-log' style="list-style: none;"></ul>
+
+    </div>
+</body>
+</html>

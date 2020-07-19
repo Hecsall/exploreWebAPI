@@ -31,10 +31,11 @@ function midiSuccess(midiAccess) {
 function handleMessage(message) {
   let data = message.data; // Actual MIDI message data.
   if (data[0] !== 254) { // Ignore the "254" message, it's like a repeating "keep alive" message.
+
     let channel = data[0]; // Channel/Type of message
     let value = data.hasOwnProperty('1') ? data[1] : null; // Incoming value (note id or controller value)
     let velocity = data.hasOwnProperty('2') ? data[2] : null; // Velocity 0-127 (speed of the pressed key)
-
+    
     // Let's just append a new string to the HTML body
     let logItem = document.createElement('li');
     logItem.innerHTML = `[${channel}, ${value}, ${velocity}]`;

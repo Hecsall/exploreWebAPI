@@ -1,0 +1,33 @@
+#piano {
+    position: relative;
+    width: 100%;
+    height: 95px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#piano .key {
+    border: solid 1px #3a3a3a;
+    display: inline-block;
+}
+
+#piano .white.key {
+    background-color: white;
+    width: calc(100% / 52); /* 52 white keys */
+    height: 95px;
+}
+
+#piano .black.key {
+    position: absolute;
+    background-color: black;
+    width: calc((100% / 52) / 2); /* half the width of a white key */
+    height: 60px;
+    transform: translateX(-50%);
+    box-shadow: inset 0 -5px 4px rgba(255,255,255,0.8);
+}
+
+#piano .key.white.active {
+    background-color: #54FFC0;
+}
+#piano .key.black.active {
+    background-color: #FF619D;
+}
