@@ -26,8 +26,8 @@
 }
 
 #piano .key.white.active {
-    background-color: #54FFC0;
+    background-color: #2979FF;
 }
 #piano .key.black.active {
-    background-color: #FF619D;
+    background-color: #64B5F6;
 }
