@@ -140,7 +140,6 @@ if (navigator.requestMIDIAccess) {
   function handleMessage(message) {
     let data = message.data; // Actual MIDI message data.
     if (data[0] !== 254) { // Ignore the "254" message, it's like a repeating "keep alive" message.
-    console.log(data)
       let channel = data[0]; // Channel/Type of message
       let value = data.hasOwnProperty('1') ? data[1] : null; // Incoming value (note id or controller value)
       let velocity = data.hasOwnProperty('2') ? data[2] : null; // Velocity 0-127 (speed of the pressed key)
@@ -153,13 +152,17 @@ if (navigator.requestMIDIAccess) {
   
         // If message channel is 144 it's a "note on" message
         case 144:
+            var rotationValue = 5;
             var key = app.root.findByName(`bone.${keyMapping[value]}`);
+            if (keyMapping[value].length === 7) {
+              rotationValue = 2;
+            }
           // Some MIDI devices instead of sending a "note off", send a note on but
           // with velocity 0, so let's check it first.
           if (velocity === 0) {
-            key.rotateLocal(-5, 0, 0);
+            key.rotateLocal(-rotationValue, 0, 0);
         } else {
-            key.rotateLocal(5, 0, 0);
+            key.rotateLocal(rotationValue, 0, 0);
           }
           break;
   
